@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transporte</title>
+</head>
+<body>
+    <input placeholder="Valor da passagem" id="valorPass"></input><br>
+    <input placeholder="Quantidade de viagens(Mês)" id="viagemM"></input><br>
+    <input placeholder="Distancia até o trabalho(km)" id="valorKm"</input><br>
+    <button id="calc" onclick="calcVt()">Calcular VT</button>
+    <div id="calcMes"></div>
+</body>
+</html>
+
+<script>
+    function calcVt(){
+        var viagMes = Number(viagemM.value); //Quantidade de viagens por mes
+        var preçoTransp = Number(valorPass.value); //Passagem de Onibus
+        var valorDist = Number(valorKm.value); //Valor da distancia de uber= 0.75
+        
+        var preçDist = (valorDist * 0.75); // Preço pra calcular o valor de distancia em KM
+        var calcTransp = preçoTransp * viagMes; //Valor das passagens em um mes. Ex=Valor da psg 4.75 x Viagens no mes
+        
+        var qntApp = (viagMes * 0.10); // 10% da viagem total
+        var appTotal = qntApp * preçDist;
+        
+        var qntTransp = viagMes - qntApp;
+        var totalTransp = qntTransp * preçoTransp; 
+        
+        var total = totalTransp + appTotal;
+        
+        calcMes.innerHTML = "Você vai gastar <b>R$:" + total + "</b>" + " por mês com transporte.";
+    }
+</script>

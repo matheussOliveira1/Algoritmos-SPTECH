@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+</head>
+<body>
+    Informe um numero: <input id="input_numero">
+    <button onclick="raiz_quadrada()">Exibir sua raiz quadrada</button>
+    <button onclick="raiz_cubica()">Exibir sua raiz cubida</button><br>
+    <span id="resultado"></span>
+</body>
+</html>
+
+<script>
+function raiz_quadrada(){
+    var valor_numero = Number(input_numero.value);
+    valor_numero = valor_numero ** (1/2);
+
+    resultado.innerHTML = `Raiz quadrada: ${valor_numero}`
+}
+function raiz_cubica(){
+    var numero_recebido = Number(input_numero.value);
+    numero_recebido = numero_recebido ** (1/3);
+
+    resultado.innerHTML = `Raiz cubica: ${numero_recebido}`
+}
+</script>

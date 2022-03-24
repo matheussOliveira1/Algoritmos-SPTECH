@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequencia Aluno</title>
+</head>
+<body>
+    <input placeholder="Nome do Aluno" id="nomeA"></input><br>
+    <input placeholder="Aulas totais do curso "id="aulasCurs"></inut><br>
+    <input placeholder="Quantidade de Faltas" id="faltas"></input><br>
+    <button onclick="calcFrequenc()" id="calcFreq">Calcular frequência</button>
+    <div id="frasePrint"></div>
+</body>
+</html>
+
+<script>
+    function calcFrequenc(){
+        var aulasTotal = Number(aulasCurs.value);
+        var faltasTotal = Number(faltas.value);
+
+        var freqFalta = ((faltasTotal * 100) / aulasTotal); // = 25% do meu exemplo "200"
+        var freqAula = (100 - freqFalta);
+
+        frasePrint.innerHTML = "<span style='color: blue'>Olá, " + nomeA.value + "! Sua frequência foi de " + freqAula + "</span><b style='color: green'>%</b><br> <div style='background-color: darkred; width:" + freqAula + "%; height: 20px'></div>";
+    }
+</script>

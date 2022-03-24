@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 05</title>
+</head>
+<body>
+    Informe um numero: <input id="input_primeiro_numero"><br>
+    Informe um numero: <input id="input_segundo_numero"><br>
+    <button onclick="calcular_raiz()">Calcular raiz</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function calcular_raiz(){
+    var primeiro_numero = Number(input_primeiro_numero.value);
+    var segundo_numero = Number(input_segundo_numero.value);
+    primeiro_numero **= (1/segundo_numero);
+    
+    resultado.innerHTML = `A ${segundo_numero}^ raiz de 25 da: ${primeiro_numero}`
+}
+</script>

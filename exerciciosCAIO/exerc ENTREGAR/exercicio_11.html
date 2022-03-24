@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+   <div id="resultado">
+    Porções de pão francês: 0<br>
+    Porções de carne boniva: 0<br>   
+    Porções de carne de soja: 0<br>  
+    Porções de arroz com feijão: 0<br>
+    Total de calorias: 0<br>
+    </div>
+
+    <button onclick="butt_pao_frances()">Comer um pão francês</button>
+    <button onclick="butt_carne_bovina()">Comer uma porção de carne bovina</button>
+    <button onclick="butt_carne_soja()">Comer uma porção de carne de soja</button>
+    <button onclick="butt_arroz_feijao()">Comer uma porção de arroz com feijão</button>
+    <button onclick="butt_recomecar()">Recomeçar</button>
+</body>
+</html>
+
+<script>
+var pao_frances = 0;
+var carne_bovina = 0;
+var carne_soja = 0;
+var arroz_e_feijao = 0;
+var total_calorias = 0;
+
+function butt_pao_frances(){
+    pao_frances ++;
+    total_calorias += 50;
+
+    resultado.innerHTML = `
+    Porções de pão francês: ${pao_frances}<br>
+    Porções de carne boniva: ${carne_bovina}<br>   
+    Porções de carne de soja: ${carne_soja}<br>  
+    Porções de arroz com feijão: ${arroz_e_feijao}<br>
+    Total de calorias: ${total_calorias}<br>
+    `
+    
+}
+function butt_carne_bovina(){
+    carne_bovina ++;
+    total_calorias += 100;
+
+    resultado.innerHTML = `
+    Porções de pão francês: ${pao_frances}<br>
+    Porções de carne boniva: ${carne_bovina}<br>   
+    Porções de carne de soja: ${carne_soja}<br>  
+    Porções de arroz com feijão: ${arroz_e_feijao}<br>
+    Total de calorias: ${total_calorias}<br>
+    `
+}
+function butt_carne_soja(){
+    carne_soja ++;
+    total_calorias += 30;
+
+    resultado.innerHTML = `
+    Porções de pão francês: ${pao_frances}<br>
+    Porções de carne boniva: ${carne_bovina}<br>   
+    Porções de carne de soja: ${carne_soja}<br>  
+    Porções de arroz com feijão: ${arroz_e_feijao}<br>
+    Total de calorias: ${total_calorias}<br>
+    `
+}
+function butt_arroz_feijao(){
+    arroz_e_feijao ++;
+    total_calorias += 120;
+
+    resultado.innerHTML = `
+    Porções de pão francês: ${pao_frances}<br>
+    Porções de carne boniva: ${carne_bovina}<br>   
+    Porções de carne de soja: ${carne_soja}<br>  
+    Porções de arroz com feijão: ${arroz_e_feijao}<br>
+    Total de calorias: ${total_calorias}<br>
+    `
+}
+function butt_recomecar(){
+    pao_frances = 0;
+    carne_bovina = 0;
+    carne_soja = 0;
+    arroz_e_feijao = 0;
+    total_calorias = 0;
+
+    resultado.innerHTML = `
+    Porções de pão francês: ${pao_frances}<br>
+    Porções de carne boniva: ${carne_bovina}<br>   
+    Porções de carne de soja: ${carne_soja}<br>  
+    Porções de arroz com feijão: ${arroz_e_feijao}<br>
+    Total de calorias: ${total_calorias}<br>
+    `
+}
+</script>

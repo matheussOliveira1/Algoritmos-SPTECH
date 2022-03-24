@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Ball</title>
+</head>
+<body>
+    <input placeholder="Insira seu KI base" id="valorKI"></input><br>
+    <b>Transformar em:</b><br>
+    <button onclick="ssj1()">SSJ</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button>
+    <div id="valorTransf"></div>
+</body>
+</html>
+
+<script>
+    function ssj1(){
+        var transf1 = Number(valorKI.value) * 50;
+
+        valorTransf.innerHTML = "Após se transformar em SSJ, o KI desse Sayajin passa a ser de " + transf1;
+    }
+    function ssj2(){
+        var transf2 = Number(valorKI.value) * 100;
+
+        valorTransf.innerHTML = "Após se transformar em SSJ2, o KI desse Sayajin passa a ser de " + transf2;
+    }
+    function ssj3(){
+        var transf3 = Number(valorKI.value) * 200;
+
+        valorTransf.innerHTML = "Após se transformar em SSJ3, o KI desse Sayajin passa a ser de " + transf3;
+    }
+</script>

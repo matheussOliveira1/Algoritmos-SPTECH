@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08</title>
+</head>
+<body>
+    <button onclick="butt_oito_passagens()">08 Passagens</button>
+    <button onclick="butt_vinte_passagens()">20 Passagens</button>
+    <button onclick="butt_cinquenta_passagens()">50 Passagens</button><br>
+
+    <span id="span_resultado"></span>
+</body>
+</html>
+
+<script>
+var valor_passagem = 4.40;
+
+
+function butt_oito_passagens(){
+    var qtdPassagens = 8;
+    var valor_cheio = valor_passagem * qtdPassagens;
+    var valor_desconto = 4.06 * qtdPassagens;
+    var passagem_desconto =  (1 - valor_desconto / valor_cheio) * 100;
+    var passagem_bonus = (valor_cheio - valor_desconto) / valor_passagem;
+
+
+    span_resultado.innerHTML = `Ao comprar ${qtdPassagens} passagens, você pagou ${passagem_desconto.toFixed(1)}% a menos. É como se tivesse ganhado ${passagem_bonus.toFixed(1)}% passagens de bônus`
+}
+function butt_vinte_passagens(){
+    var qtdPassagens_vinte = 20;
+    var valor_cheio_vinte = valor_passagem * qtdPassagens_vinte;
+    var valor_desconto_vinte = 3.93 * qtdPassagens_vinte;
+    var passagem_desconto_vinte =  (1 - valor_desconto_vinte / valor_cheio_vinte) * 100;
+    var passagem_bonus_vinte = (valor_cheio_vinte - valor_desconto_vinte) / valor_passagem;
+
+    span_resultado.innerHTML = `Ao comprar ${qtdPassagens_vinte} passagens, você pagou ${passagem_desconto_vinte.toFixed(1)}% a menos. É como se tivesse ganhado ${passagem_bonus_vinte.toFixed(1)}% passagens de bônus`
+}
+function butt_cinquenta_passagens(){
+    var qtdPassagens_cinquenta = 50;
+    var valor_cheio_cinquenta = valor_passagem * qtdPassagens_cinquenta;
+    var valor_desconto_cinquenta = 3.83 * qtdPassagens_cinquenta;
+    var passagem_desconto_cinquenta = (1 - valor_desconto_cinquenta/ valor_cheio_cinquenta) * 100;
+    var passagem_bonus_cinquenta = (valor_cheio_cinquenta - valor_desconto_cinquenta) / valor_passagem;
+
+    span_resultado.innerHTML = `Ao comprar ${qtdPassagens_cinquenta} passagens, você pagou ${passagem_desconto_cinquenta.toFixed(1)}% a menos. É como se tivesse ganhado ${passagem_bonus_cinquenta.toFixed(1)}% passagens de bônus`
+}
+</script>

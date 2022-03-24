@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 04</title>
+</head>
+<body>
+    Informe um numero: <input id="input_primeiro_numero"><br>
+    Informe um numero: <input id="input_segundo_numero"><br>
+    <button onclick="fazer_potencia()">Fazer potencia</button><br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function fazer_potencia(){
+    var primeiro_numero = Number(input_primeiro_numero.value);
+    var segundo_numero = Number(input_segundo_numero.value);
+    var potencia = primeiro_numero;
+    potencia **= segundo_numero;
+
+    resultado.innerHTML = `${primeiro_numero} elevado a ${segundo_numero} da ${potencia}`
+}
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comidas</title>
+</head>
+<body>
+    <button onclick="carnes()" id="carnes1">
+        Carnes
+    </button>
+
+    <button onclick="legumes()">
+        Legumes
+    </button>
+
+    <button onclick="frutas()">
+        Frutas
+    </button>
+</body>
+</html>
+
+<script>
+    function carnes(){
+        alert ("Eu gosto de Carnes!");
+        document.title = "Último clique: Botão de carnes";
+    }
+    function legumes(){
+        alert ("Eu gosto de Legumes");
+        document.title = "Último clique: Botão de legumes";
+    }
+    function frutas(){
+        alert ("Eu gosto de Frutas");
+        document.title = "Último clique: Botão de frutas";
+    }
+</script>

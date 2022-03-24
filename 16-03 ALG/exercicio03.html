@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+</head>
+<body>
+    <span style="color: rgb(0, 0, 180);">
+        <div id="span_frase" style="float: left;">Total guardado no cofrinho: R$</div>
+        <span id="div_total_guardado" style="float: left;">0.00</span><br>
+        <div id="div_depositos_efetuados" style="float: left;">Depósitos efetuados: </div>
+        <span id="span_depositos" style="float: left;"> 0</span>
+
+    </span><br>
+
+    <button onclick="butt_depositar_cinquentaCentavos()">Depositar R$:0,50</button>
+    <button onclick="butt_depositar_doisReais()">Depositar R$:2,00</button>
+</body>
+</html>
+
+<script>
+    function butt_depositar_cinquentaCentavos(){
+        var dinheiro_guardado = Number(div_total_guardado.innerHTML);
+        var depositar_cinquentaCents = dinheiro_guardado + 0.50;
+
+        dinheiro_guardado = depositar_cinquentaCents;
+
+        div_total_guardado.innerHTML = `${depositar_cinquentaCents.toFixed(2)}`;
+
+        var depositos_efetuados = Number(span_depositos.innerHTML);
+        var quantidade_depositos = depositos_efetuados + 1;
+
+        depositos_efetuados =  quantidade_depositos;
+
+        span_depositos.innerHTML = quantidade_depositos;
+
+    }
+
+    function butt_depositar_doisReais(){
+        var dinheiro_recolhido = Number(div_total_guardado.innerHTML);
+        var depositar_doisReais = dinheiro_recolhido + 2.00;
+
+        dinheiro_recolhido = depositar_doisReais;
+
+        div_total_guardado.innerHTML = `${depositar_doisReais.toFixed(2)}`;
+
+        var depositos_realizados = Number(span_depositos.innerHTML);
+        var quantidade_realizada = depositos_realizados + 1;
+
+        depositos_realizados = quantidade_realizada;
+
+        span_depositos.innerHTML = quantidade_realizada;
+    }
+</script>

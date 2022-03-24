@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição2</title>
+</head>
+<body>
+    <div>
+    <input placeholder="Qnt votos no candidato A" id="candidato1">
+    <br>
+    <input placeholder="Qnt votos no candidato B" id="candidato2">
+    <br>
+    <input placeholder="Qnt de votos brancos" id="vtBranco">
+    <br>
+    <input placeholder="Qnt de votos nulos" id="vtNulo">
+    <br>
+    <br>
+    <button onclick="resultado()">Resultado da Eleição</button>
+    </div><br>
+    
+    <div id="votos"></div><br>
+    <div id="candA"></div><br>
+    <div id="candB"></div><br>
+    <div id="inv"></div>
+
+</body>
+</html>
+
+<script>
+    function resultado(){
+        var cA = Number(candidato1.value);
+        var cB = Number(candidato2.value);
+        var votosBrancos = Number(vtBranco.value);
+        var votosNulos = Number(vtNulo.value);
+        var total = Number(cA + cB + votosBrancos + votosNulos);
+        var invalidos = Number(votosNulos + votosBrancos);
+        
+        var porcent1 = Number((100 * cA) / total)
+        var porcent2 = Number((100 * cB) / total)
+        var porcent3 = Number((100 * invalidos) / total)
+
+        votos.innerHTML = "Total de votos: " + "<u><b>" + total + "</b></u>" 
+        candA.innerHTML = "Candidato A: " + porcent1 + "%" + "(" + cA + ") <br> <div style='background-color: green; width:" + porcent1 + "%; height: 30px'></div>"
+        candB.innerHTML = "Candidato B: " + porcent2 + "%" + "(" + cB + ") <br> <div style='background-color: red; width:" + porcent2 + "%; height: 30px'></div>" 
+        inv.innerHTML = "Inválidos: " + porcent3 + "%" + "(" + invalidos + ") <br> <div style='background-color: gray; width:" + porcent3 + "%; height: 30px'></div>"
+    }
+</script>

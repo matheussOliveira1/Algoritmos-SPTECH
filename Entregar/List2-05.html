@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+    Sabor da pizza: <input id="saborP"></input><br>
+    Valor da pizza: <input id="valorPizza"></input><br>
+    Qnt de pessoas pra comer: <input id="qntAmig"></input><br>
+    <button id="preçoPizza" onclick="valorDiv()">Ver valor por amigo</button><br>
+    <div id="resultPizza"></div>
+    
+</body>
+</html>
+
+<script>
+    function valorDiv(){
+        var valorTotal = Number(valorPizza.value);
+        var valorAmig = Number(qntAmig.value);
+        
+        var caixEnt = Number((valorPizza.value * 10) / 100);
+        var divAmig = ((valorTotal + caixEnt) / valorAmig);
+        
+        resultPizza.innerHTML = "Cada amigo vai colaborar com: <b>R$" + divAmig + "</b> para a pizza de " + "<b>" + saborP.value + "</b>"
+    }
+</script>

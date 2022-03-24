@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 07</title>
+</head>
+<body>
+    Valor do carro a vista: <input id="input_valor_carro_a_vista"><br>
+    Taxa de juros(ao mês): <input id="input_taxa_juros_mensal"><br>
+    Quantidade de parcelas: <input id="input_quantidade_parcelas"><br>
+    <button onclick="butt_calcular_preju()">Calcular prejú</button><br>
+
+    <span id="span_resultado"></span>
+</body>
+</html>
+
+<script>
+function butt_calcular_preju(){
+    var valor_a_vista = Number(input_valor_carro_a_vista.value);
+    var taxa_juros = Number(input_taxa_juros_mensal.value);
+    var quantidade_parcelas = Number(input_quantidade_parcelas.value);
+    var razaoPG = (taxa_juros / 100) + 1;
+    var primeiro_termo = valor_a_vista / quantidade_parcelas;
+    
+    //calculos
+    var calculo_carro_total = primeiro_termo * (1 - (razaoPG)**quantidade_parcelas);
+    var calculo2_sobre_carro_total = 1 - (razaoPG);
+    var resultado = calculo_carro_total / calculo2_sobre_carro_total;
+    /////////////////////////////////////////
+    var carro_porcentagem = valor_a_vista - (valor_a_vista * 0.80);
+    var correspondente_carrosC = resultado / valor_a_vista;
+    
+
+
+    //resultado
+    span_resultado.innerHTML = `Seu carro vai sair por um total de R$${resultado.toFixed(2)}<br>
+    Após 1 mês, ele já vai valer só R$${carro_porcentagem.toFixed(2)}<br>
+    Porque comprou financiado, vai pagar o correspondente a ${correspondente_carrosC.toFixed(1)} carros`
+
+    //span_resultado.innerHTML = `Razao: ${razaoPG}<br>
+    //Primeiro termo: ${primeiro_termo}<br>
+    //Valor a vista: ${valor_a_vista}<br>
+    //Quantidade de parcelas: ${quantidade_parcelas}
+    //calculo 1: ${calculo}<br>
+    //calculo 2: ${calculo2}<br>
+    //resultado: ${resultado}`
+}
+</script>

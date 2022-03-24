@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRASIL X ALEMANHA</title>
+</head>
+<body>
+    <span style="font-size: 100px; text-align: center">Brasil x Alemanha</span>
+    <br>
+    
+ 
+    <button onclick="brasil()" id="brasil1">
+        Gol do Brasil
+    </button>
+
+    <button onclick="alemanha()" id="alemanha1">
+        Gol da Alemanha
+    </button>
+
+    <button type="reset" onclick="recomeçar()">
+        Recomeçar partida
+    </button>
+    <br>
+
+    <div>
+        <b style="font-size: 25px">Tempo real do jogo:</b>
+    </div>
+
+    <div id="frase"></div>
+</body>
+</html>
+
+<script>
+    function brasil(){
+        frase.innerHTML += "É gooool do Brasil!!! <br>";
+        frase.style.color = "green";
+    }
+    function alemanha(){
+        frase.innerHTML += "<div style='background-color: red; color: yellow'> É goooolll da Alemanha!!! </div>";
+
+    }
+    function recomeçar(){
+        frase.innerHTML = "";
+    }
+</script>

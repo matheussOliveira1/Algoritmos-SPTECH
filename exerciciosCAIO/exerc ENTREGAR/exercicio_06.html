@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 06</title>
+</head>
+<body>
+    Primeiro numero da progressão: <input id="input_primeiro_numero"><br>
+    Razão: <input id="input_segundo_numero"><br>
+    Termo: <input id="input_terceiro_numero"><br>
+    <button onclick="butt_calcular_pg()">Calcular PG</button><br>
+
+    
+        <span id="span_memoria"></span>
+
+</body>
+</html>
+
+<script>
+function butt_calcular_pg(){
+    var numero1 = Number(input_primeiro_numero.value);
+    var razao = Number(input_segundo_numero.value);
+    var termo = Number(input_terceiro_numero.value);
+    
+    
+//calculos 
+    numero1 *= razao **(termo -1);
+
+
+    span_memoria.innerHTML = `O ${termo}º termo desta PG será ${numero1}`
+
+}
+</script>
