@@ -17,13 +17,13 @@
 <script>
 function raiz_quadrada(){
     var valor_numero = Number(input_numero.value);
-    valor_numero = valor_numero ** (1/2);
+    valor_numero **= (1/2);
 
     resultado.innerHTML = `Raiz quadrada: ${valor_numero}`
 }
 function raiz_cubica(){
     var numero_recebido = Number(input_numero.value);
-    numero_recebido = numero_recebido ** (1/3);
+    numero_recebido **= (1/3);
 
     resultado.innerHTML = `Raiz cubica: ${numero_recebido}`
 }
