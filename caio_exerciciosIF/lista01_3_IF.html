@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+</head>
+<body>
+    Informe quantidade pessoa: <input id="quantidade_filhos">
+    <button onclick="verificar_situacao()">Verificar situação</button>
+    <div id="div_filhos"></div>
+</body>
+</html>
+
+<script>
+    function verificar_situacao(){
+        var qtdFilhos = Number(quantidade_filhos.value);
+        var frase = "";
+        
+        if(qtdFilhos == 0){
+            frase = "Sem descendentes"
+        }
+
+        if(qtdFilhos == 1){
+            frase = "Filho único"
+        }
+
+        if(qtdFilhos >= 2){
+            frase = "Crescei e multiplicai-vos!"
+        }
+
+    div_filhos.innerHTML = `${frase}`
+    }
+</script>

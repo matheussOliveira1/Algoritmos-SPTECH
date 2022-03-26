@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+</head>
+<body>
+    Saldo da conta: <input id="input_saldo_conta"><br>
+    Valor do débito(valor a descontar): <input id="input_valor_descontar"><br>
+    <button onclick="analisar_conta()">Analisar conta</button>
+
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+    function analisar_conta(){
+        var saldoConta = Number(input_saldo_conta.value);
+        var valorDescontar = Number(input_valor_descontar.value);
+        var descontarDebito = saldoConta - valorDescontar;
+
+        if(descontarDebito == 0){
+            div_frase.innerHTML = `<b style="color: red">O saldo atual da conta corrente é de: R$${descontarDebito.toFixed(2)}</b>`
+        }else{
+            div_frase.innerHTML = `O saldo da conta corrente é de: R$${descontarDebito.toFixed(2)}`
+        }
+    }
+</script>

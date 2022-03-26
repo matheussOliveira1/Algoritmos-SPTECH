@@ -18,8 +18,8 @@
 function calcular_raiz(){
     var primeiro_numero = Number(input_primeiro_numero.value);
     var segundo_numero = Number(input_segundo_numero.value);
-    primeiro_numero **= (1/segundo_numero);
+    var calculo = primeiro_numero ** (1/segundo_numero);
     
-    resultado.innerHTML = `A ${segundo_numero}^ raiz de 25 da: ${primeiro_numero}`
+    resultado.innerHTML = `A ${segundo_numero}^ raiz de ${primeiro_numero} da: ${calculo}`
 }
 </script>

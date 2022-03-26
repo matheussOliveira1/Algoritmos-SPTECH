@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 04</title>
+</head>
+<body>
+    Quantidade de latinhas(Por dia): <input id="input_quantidade_latinhas">
+    <button onclick="quantidade_refris()">Quantos refris</button>
+    <div id="div_refris"></div>
+</body>
+</html>
+
+<script>
+    function quantidade_refris(){
+        var qtdLatinhas = Number(input_quantidade_latinhas.value);
+        var refri_ano = qtdLatinhas * 365;
+        var text = "Você consome por ano: " + refri_ano;
+
+        if(refri_ano >= 500){
+            text += `<br>Cuide melhor da sua saúde`
+        }
+
+        div_refris.innerHTML = `${text}`
+    }
+</script>

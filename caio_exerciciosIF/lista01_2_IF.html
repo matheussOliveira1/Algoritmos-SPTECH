@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 02</title>
+</head>
+<body>
+    Infrações já cometidas: <input id="input_infracoes_cometidas"><br>
+    Valor do carro: <input id="input_valor_carro"><br>
+    <button onclick="butt_calcular_seguro()">Calcular seguro</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function butt_calcular_seguro() {
+    var valorCarro = Number(input_valor_carro.value);
+    var infracoesCometidas = Number(input_infracoes_cometidas.value);
+    var calculo = valorCarro * 0.015;
+
+    if(infracoesCometidas < 3){
+        calculo *= 0.9;
+    }
+
+    resultado.innerHTML = `${calculo}`
+}
+</script>
