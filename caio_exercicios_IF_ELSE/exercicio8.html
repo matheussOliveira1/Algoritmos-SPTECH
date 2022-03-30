@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08</title>
+</head>
+<body>
+    Tempo do arroz cozinhando: <input id="inpt_tempo_arroz">
+    <button onclick="butt_provar()">Provar arroz</button>
+
+    <div id="div_frase"></div>
+</body>
+</html>
+
+<script>
+    function butt_provar(){
+        var tempoArrozCozinhando = Number(inpt_tempo_arroz.value);
+        if(tempoArrozCozinhando <=5){
+            div_frase.innerHTML = `Parabéns! Arroz perfeito! <br> <img src="arroz-lindo.jpg" style="width 300px; height: 300px">`
+        }else{
+            div_frase.innerHTML = `Arroz cru ou cozido demais! <br> <img src="arroz-queimado.jpg" style="width 300px; height: 300px">`
+        }
+    }
+</script>

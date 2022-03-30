@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 07</title>
+</head>
+<body>
+    Temperatura do ambiente: <input id="inpt_temperatura"><br>
+    <button onclick="butt_verificar_clima()">Verificar clima</button><br>
+
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function butt_verificar_clima(){
+        var temperatura = Number(inpt_temperatura.value);
+        if(temperatura <= 10){
+            div_resultado.innerHTML = `<br><img src="apropriada.jpg" style="width 250px; height: 250px">`
+        }else{
+            div_resultado.innerHTML = `<br><img src="inapropriada.jpg" style="width 250px; height: 250px">`
+        }
+    }
+</script>

@@ -10,9 +10,6 @@
     Insira a frequência do Aluno: <input type="text" id="inpt_frequencia"><br>
     <button onclick="analisar_freq()">Analisar frequência</button>
 
-    <img src="turista.jpg" id="imagem_turista">
-    <img src="estudioso.jpg" id="imagem_estudioso">
-
     <div id="div_resultado"></div>
 </body>
 </html>
@@ -21,9 +18,10 @@
     function analisar_freq(){
         var freq_aluno = Number(inpt_frequencia.value);
         if(freq_aluno <= 50){
-           img.src = "turista.jpg"
+           div_resultado.innerHTML = `<img src="turista.jpg">`
+           
         }else{
-            img.src = "estudioso.jpg"
+            div_resultado.innerHTML = `<img src="estudioso.jpg">`
         }
 }
 </script>
