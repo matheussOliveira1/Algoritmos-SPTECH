@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Renda familiar: <input id="inpt_renda">
+    <button onclick="butt_verificar_situacao()">Verificar situação</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function butt_verificar_situacao(){
+        var rendaFamiliar = Number(inpt_renda.value);
+
+    //ifs/ elses
+        if(rendaFamiliar > 9500){
+            div_resultado.innerHTML = "Classe A"
+        }else if(rendaFamiliar > 2500){
+            div_resultado.innerHTML = "Classe B"
+        }else if(rendaFamiliar > 900){
+            div_resultado.innerHTML = "Classe C"
+        }else if(rendaFamiliar > 250){
+            div_resultado.innerHTML = "Classe D"
+        }else{
+            div_resultado.innerHTML = "Classe E"
+        }
+    }
+</script>
