@@ -16,16 +16,18 @@
 <script>
     function butt_analisar_temperatura(){
         var valorTemp = Number(inpt_temperatura.value);
-    }
-    if(valorTemp < 14){
-        div_temperatura.innerHTML = "Congelante"
-    }else if(valorTemp >= 14){
-        div_temperatura.innerHTML = "Com Frio"
-    }else if(valorTemp > 21){
-        div_temperatura.innerHTML = "Confortável"
+
+        //ação
+    if(valorTemp > 31){
+        div_temperatura.innerHTML = "Calor escaldante"
     }else if(valorTemp > 24){
         div_temperatura.innerHTML = "Com calor"
+    }else if(valorTemp > 21){
+        div_temperatura.innerHTML = "Confortável"
+    }else if(valorTemp > 14){
+        div_temperatura.innerHTML = "Com Frio"
     }else{
-        div_temperatura.innerHTML = "Calor escaldante"
+        div_temperatura.innerHTML = "Congelante"
     }
+}
 </script>

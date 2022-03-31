@@ -21,13 +21,13 @@
         var calculo = golsMarcados / jogosAtacante;
         
         if(calculo < 0.2){
-            div_resultado.innerHTML = `Melhor mudar de posição<br> Sua média de gols/partida é de ${calculo}<br> `
+            div_resultado.innerHTML = `Melhor mudar de posição<br> Sua média de gols/partida é de ${calculo.toFixed(1)}<br> <img src="ruim.jpg" style="width 250px; height: 250px">`
         }else{
             if(calculo >= 0.2){
                 if(calculo <= 0.6){
-                    div_resultado.innerHTML = `Atacante mediano<br> Sua média de gols/partida é de ${calculo}<br> `
+                    div_resultado.innerHTML = `Atacante mediano<br> Sua média de gols/partida é de ${calculo.toFixed(1)}<br> <img src="mediano.jpg" style="width 250px; height: 250px">`
                 }else{
-                    div_resultado.innerHTML = `Atacante de futuro<br> Sua média de gols/partida é de ${calculo}<br> <img src="atacantefuturo.jpg">`
+                    div_resultado.innerHTML = `Atacante de futuro<br> Sua média de gols/partida é de ${calculo.toFixed(1)}<br> <img src="atacantefuturo.jpg" style="width 250px; height: 250px">`
                 }
             }
         }
