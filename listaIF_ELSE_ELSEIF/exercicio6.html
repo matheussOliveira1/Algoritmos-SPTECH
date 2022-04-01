@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Atividade 06</title>
 </head>
 <body>
     
@@ -19,16 +19,14 @@
 <script>
     function butt_analisar_peso(){
     var peso = Number(inpt_peso.value);
-        if(peso > 21.2){
-            resultado.innerHTML = "Acima do peso"
+        if(peso <= 13.5){
+            resultado.innerHTML = "Abaixo do peso"
         }else if(peso == 18.3){
             resultado.innerHTML = "Peso perfeito"
-        }else if(peso > 13.5){
-            if(peso <= 21.2){
+        }else if(peso <= 21.2){
             resultado.innerHTML = "Peso na média"
-            }
         }else{
-            resultado.innerHTML = "Abaixo do peso"
+            resultado.innerHTML = "Acima do peso"
         }
 }
 </script>

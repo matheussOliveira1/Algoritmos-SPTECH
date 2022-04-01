@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08</title>
+</head>
+<body>
+    Quantos pães franceses você come por dia: <input type="text" id="inpt_paes"><br>
+    Quantos pacotes de bolacha recheada você come por dia: <input type="text" id="inpt_bolacha"><br>
+    Quantos copos de achocolatado você toma por dia: <input type="text" id="inpt_achocolatado"><br>
+
+    <button onclick="butt_verificar_calorias()">Verificar calorias</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function butt_verificar_calorias(){
+        var paesFranceses = Number(inpt_paes.value);
+        var bolachaRecheada = Number(inpt_bolacha.value);
+        var achocolatado = Number(inpt_achocolatado.value);
+        
+        // calculos:
+        var contaPaes = paesFranceses * 50;
+        var contaBolacha = bolachaRecheada * 80;
+        var contaAchocolatado = achocolatado * 70;
+        var total = contaPaes + contaBolacha + contaAchocolatado;
+
+        // funcoes
+
+        if(total < 200){
+            div_resultado.innerHTML = `Está perdendo peso`
+        }else if(total <= 400){
+            div_resultado.innerHTML = `Nem lá, nem cá. Vai manter a forma.`
+        }else{
+            div_resultado.innerHTML = `Forte tendência á ganhar peso!`
+        }
+    }
+</script>

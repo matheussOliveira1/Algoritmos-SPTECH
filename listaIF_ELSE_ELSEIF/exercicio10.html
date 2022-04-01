@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv 10 - Desafio</title>
+</head>
+<body>
+    <button onclick="butt_primeira_nota()">Nota 1</button>
+    <button onclick="butt_segunda_nota()">Nota 2</button>
+    <button onclick="butt_terceira_nota()">Nota 3</button>
+    <button onclick="butt_quarta_nota()">Nota 4</button>
+    <button onclick="butt_quinta_nota()">Nota 5</button><br>
+    <div id="div_avaliacao">Sua avaliação é de alguém: </div>
+</body>
+</html>
+
+<script>
+    var notas  = 0;
+    var avaliacoes = 0;
+
+    function butt_primeira_nota(){
+        notas += 1;
+        verificacao()
+    }
+    function butt_segunda_nota(){
+        notas += 2;
+        verificacao()
+    }
+    function butt_terceira_nota(){
+        notas += 3;
+        verificacao()
+    }
+    function butt_quarta_nota(){
+        notas += 4;
+        verificacao()
+    }
+    function butt_quinta_nota(){
+        notas += 5;
+        verificacao()
+    }
+    function verificacao(){
+        avaliacoes += 1;
+        var media = notas / avaliacoes;
+        div_avaliacao.innerHTML = media.toFixed(1)
+        if(media < 2){
+            div_avaliacao.innerHTML = `<img src="chorando.jpg" style="width: 200px; height: 200px;">`
+        }else if(media <= 3){
+            div_avaliacao.innerHTML = `<img src="neutro.jpg" style="width: 200px; height: 200px;">`
+        }else if(media <= 4){
+            div_avaliacao.innerHTML = `<img src="feliz.jpg" style="width: 200px; height: 200px;">`
+        }else{
+            div_avaliacao.innerHTML = `<img src="superfeliz.jpg" style="width: 200px; height: 200px;">`
+        }
+}
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09</title>
+</head>
+<body>
+    <div id="qtd_cliques">Você já clicou 0 vezes</div>
+    <button onclick="butt_clicar()">Clique aqui</button>
+</body>
+</html>
+
+<script>
+    var clique = 0;
+    function butt_clicar(){
+        clique ++;
+        qtd_cliques.innerHTML = `Você já clicou ${clique} vezes`
+        if(clique < 5){
+            if(clique == 1){
+                qtd_cliques.innerHTML = `Você já clicou ${clique} vez <br>
+                Dedo fraquinho, hein ;(`
+            }else{
+                qtd_cliques.innerHTML = `Você já clicou ${clique} vezes <br>
+                Dedo fraquinho, hein ;(`
+        }
+        }else if(clique <= 10){
+            qtd_cliques.innerHTML = `Você já clicou ${clique} vezes <br>
+            Na média - não me impressiona...`
+        }else if(clique <= 15){
+            qtd_cliques.innerHTML = `Você já clicou ${clique} vezes <br>
+            Está treinando em casa!`
+        }else{
+            qtd_cliques.innerHTML = `Você já clicou ${clique} vezes <br>
+            Mestre dos cliques!!!`
+        }
+    }
+</script>

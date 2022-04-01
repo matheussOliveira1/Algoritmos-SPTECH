@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+
+<body>
+    Mês: <select id="slct_mes">
+            <option value="janeiro">Janeiro</option>
+            <option value="fevereiro">Fevereio</option>
+            <option value="marco">Março</option>
+            <option value="abril">Abril</option>
+            <option value="maio">Maio</option>
+            <option value="junho">Junho</option>
+            <option value="julho">Julho</option>
+            <option value="agosto">Agosto</option>
+            <option value="setembro">Setembro</option>
+            <option value="outubro">Outubro</option>
+            <option value="novembro">Novembro</option>
+            <option value="dezembro">Dezembro</option>
+        </select>
+
+    <button onclick="butt_estacao()">Ver estação</button>
+    <div id="teste"></div>
+</body>
+
+</html>
+
+<script>
+    function butt_estacao() {
+        var mes_selecionado = slct_mes.value;
+        if(mes_selecionado == "janeiro"){
+            teste.innerHTML = "inverno";
+        }else if(mes_selecionado == "fevereiro"){
+            teste.innerHTML = "invern";
+        }else if(mes_selecionado == "marco"){
+            teste.innerHTML = "primavera";
+        }else if(mes_selecionado == "abril"){
+            teste.innerHTML = "primaver";
+        }else if(mes_selecionado == "maio"){
+            teste.innerHTML = "primave";
+        }else if(mes_selecionado == "junho"){
+            teste.innerHTML = "verao";
+        }else if(mes_selecionado == "julho"){
+            teste.innerHTML = "vera";
+        }else if(mes_selecionado == "agosto"){
+            teste.innerHTML = "ver";
+        }else if(mes_selecionado == "setembro"){
+            teste.innerHTML = "outono";
+        }else if(mes_selecionado == "outubro"){
+            teste.innerHTML = "outon";
+        }else if(mes_selecionado == "novembro"){
+            teste.innerHTML = "outo";
+        }else{
+            teste.innerHTML = "inver";
+        }
+    }
+</script>
