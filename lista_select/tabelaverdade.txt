@@ -1,0 +1,27 @@
+Refeicao:                    bebida:
+salada:10                    nenhum: 0  
+feijoada:25                  agua: 5
+bife:40                      refrigerante: 10
+peixe:35                     cerveja: 15
+
+calculos:
+
+salada + nenhum = 10
+salada + agua = 15
+salada + refrigerante = 20
+salada + cerveja = 25
+
+feijoada + nenhum = 25
+feijoada + agua = 30
+feijoada + refrigerante = 35
+feijoada + cerveja = 40
+
+bife + nenhum = 40
+bife + agua = 45
+bife + refrigerante = 50
+bife + cerveja = 55
+
+peixe + nenhum = 35
+peixe + agua = 40
+peixe + refrigerante = 45
+peixe + cerveja = 50
