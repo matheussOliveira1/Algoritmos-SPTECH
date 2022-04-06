@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+    <select id="modoPagamento">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="cartaoDebito">Cartão de débito</option>
+        <option value="cartaoCredito">Cartão de crédito</option>
+        <option value="boleto">Boleto</option>
+    </select><br>
+    <button onclick="butt_analisador()">Analisar compra</button>
+</body>
+</html>
+
+<script>
+    function butt_analisador(){
+        var formaPagamento = modoPagamento.value;
+        if(formaPagamento == "dinheiro" || formaPagamento == "boleto"){
+            alert("Você terá que pagar a vista")
+        }else{
+            alert("Você poderá ser parcelado")
+        }
+    }
+</script>

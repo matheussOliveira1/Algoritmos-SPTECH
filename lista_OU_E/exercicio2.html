@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    Informe sua renda pessoal: <input id="inpt_renda"><br>
+    Informe a renda total familiar: <input id="inpt_total_familiar"><br>
+    <button onclick="butt_verificador()">Verificar ajuda</button>
+</body>
+</html>
+
+<script>
+    function butt_verificador(){
+        var rendaPessoal = Number(inpt_renda.value);
+        var rendaFamiliar = Number(inpt_total_familiar.value);
+        if(rendaPessoal <= 1050 && rendaFamiliar <= 2100){
+            alert("Você terá direito!")
+        }else{
+            alert("Você NÃO terá direito!")
+        }
+    }
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    Informe sua idade: <input id="inpt_idade"><br>
+    Infor seu peso: <input id="inpt_peso"><br>
+    <button onclick="butt_verificacao()">Pode brincar?</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function butt_verificacao(){
+    var idade = Number(inpt_idade.value);
+    var peso = Number(inpt_peso.value);
+    if(idade > 15 && peso <= 100){
+        resultado.innerHTML = `Você poderá brincar!! :)`
+    }else{
+        resultado.innerHTML = `Você não poderá brincar!! :c`
+    }
+}
+</script>

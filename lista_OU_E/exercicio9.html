@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+
+<body>
+    Tipo de arroz:<select id="select_tipoArroz">
+        <option value="integral">Integral</option>
+        <option value="branco">Branco</option>
+    </select><br>
+    Minutos cozinhando: <input id="inpt_minutos"><br>
+    Quantidade de sal utilizada: (g)<input id="inpt_gramas_sal"><br>
+    <button onclick="avaliador()">Avaliar arroz</button><br>
+    <div id="resultado"></div>
+</body>
+
+</html>
+
+<script>
+    function avaliador() {
+        var tipoArroz = select_tipoArroz.value;
+        var minutos = Number(inpt_minutos.value);
+        var salUtilizado = Number(inpt_gramas_sal.value);
+        if (tipoArroz == "branco" &&
+            minutos == 10 &&
+            salUtilizado == 10 ||
+            tipoArroz == "integral" &&
+            minutos == 20 &&
+            salUtilizado == 15) {
+            resultado.innerHTML = `Seu arroz está perfeito <br> <img src="https://salcomalho.files.wordpress.com/2014/02/montinhoarroz-3.jpg" style="width: 900px; height 450px">`
+        } else {
+            resultado.innerHTML = `Seu arroz não está perfeito <br> <img src="https://noticiasdatv.uol.com.br/media/uploads/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min.jpg" style="width: 900px; height: 450px">`
+        }
+    }
+</script>

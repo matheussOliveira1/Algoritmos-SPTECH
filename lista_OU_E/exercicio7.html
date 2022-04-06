@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7 </title>
+</head>
+<body>
+    <div id="cliques">Você já clicou 0 vezes</div><br>
+    <button onclick="butt_clique()">Clique cabalístico</button>
+</body>
+</html>
+
+<script>
+    var clique = 0;
+    function butt_clique(){
+        clique ++;
+        if(clique == 3 || clique == 4 || clique == 7 || clique == 10){
+          cliques.innerHTML = `Você já clicou ${clique} vezes e Juliana gosta deste número!`  
+        }else{
+            cliques.innerHTML = `Você já clicou ${clique} vezes`  
+        }
+    }
+</script>

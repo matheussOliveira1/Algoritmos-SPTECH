@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+    Nome da empresa: <input id="inpt_nomeEmpresa"><br>
+    Valor da bolsa da empresa: <input id="inpt_bolsaEmpresa"><br>
+    Valor VR da empresa: <input id="inpt_vrEmpresa"><br>
+    Tempo de deslocamento(De Empresa para SPTECH): <input id="inpt_tempoDeslocamento"><br>
+    <button onclick="verificador()">É preferida?</button><br>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function verificador(){
+        var nomeEmpresa = inpt_nomeEmpresa.value;
+        var bolsaEmpresa = Number(inpt_bolsaEmpresa.value);
+        var vrEmpresa = Number(inpt_vrEmpresa.value);
+        var tempoDeslocamento = inpt_tempoDeslocamento.value;
+        if(bolsaEmpresa >= 1800 || vrEmpresa >= 20 || tempoDeslocamento <= 30){
+            resultado.innerHTML = `A empresa ${nomeEmpresa} é uma das suas preferências`
+        }else{
+            resultado.innerHTML = `A empresa ${nomeEmpresa} está fora da sua lista`
+        }
+    }
+</script>

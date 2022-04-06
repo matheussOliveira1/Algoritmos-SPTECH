@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    Café da Manhã: <select id="cafe">
+        <option value="ovos">Ovos</option>
+        <option value="leiteArroz">Leite de Arroz</option>
+        <option value="bacon">Bacon</option>
+    </select><br>
+    Almoço: <select id="almoco">
+        <option value="bife">Bife</option>
+        <option value="hamburgSoja">Hamburguer de Soja</option>
+        <option value="frangoGrelhado">Frango grelhado</option>
+    </select><br>
+    Janta: <select id="janta">
+        <option value="picanhaSoja">Picanha de Soja</option>
+        <option value="cupim">Cupim</option>
+        <option value="coracao">Coração</option>
+    </select><br>
+
+    <button onclick="butt_verificador()">Sou vegano?</button>
+</body>
+</html>
+
+<script>
+    function butt_verificador(){
+        var cafeManha = cafe.value;
+        var almocoTarde = almoco.value;
+        var jantaNoite = janta.value;
+
+        if(cafeManha == "leiteArroz" && almocoTarde == "hamburgSoja" && jantaNoite == "picanhaSoja"){
+            alert("Sim, você é vegano!")
+        }else{
+            alert("Não, você não é vegano!")
+        }
+    }
+</script>
