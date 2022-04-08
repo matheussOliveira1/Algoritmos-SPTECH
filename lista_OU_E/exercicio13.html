@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+    Informe a nota da avaliação: <input id="inpt_avaliacao">
+    <button onclick="avaliador()">Avaliar</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function avaliador(){
+        var nota = Number(inpt_avaliacao.value);
+        if(nota < 0 || nota > 5){
+            alert(`Nota inválida. Digite de 0 a 5`)
+        }else{
+            if(nota == 0.5){
+                resultado.innerHTML = `<img src="meiaestrelas.png">`
+            }else if(nota > 0.5 && nota < 1){
+                resultado.innerHTML = `<img src="0.5estrela.png">`
+            }else if(nota >= 1 && nota < 1.5){
+                    resultado.innerHTML = `<img src="1estrela.png">`
+            }else if(nota >= 1.5 && nota < 2){
+                resultado.innerHTML = `<img src="1.5estrelas.png">`
+            }else if(nota >= 2 && nota < 2.5){
+                resultado.innerHTML = `<img src="2estrelas.png">`
+            }else if(nota >= 2.5 && nota < 3){
+                resultado.innerHTML = `<img src="2.5estrelas.png">`
+            }else if(nota >= 3 && nota < 3.5){
+                resultado.innerHTML = `<img src="3estrelas.png">`
+            }else if(nota >= 3.5 && nota < 4){
+                resultado.innerHTML = `<img src="3.5estrelas.png">`
+            }else if(nota >= 4 && nota < 4.5){
+                resultado.innerHTML = `<img src="4estrelas.png">`
+            }else{
+                if(nota == 4.5){
+                    resultado.innerHTML = `<img src="4.5estrelas.png">`
+                }else if(nota == 5){
+                    resultado.innerHTML = `<img src="5estrelas.png">`
+                }else{
+                    resultado.innerHTML = `<img src="0estrelas.png">`
+                }
+            }
+        }
+    }
+</script>

@@ -18,7 +18,7 @@
     function avaliador(){
         var temperatura = Number(inpt_temperatura.value);
         var umidade = Number(inpt_umidade.value);
-        if(umidade <= 0 || umidade >= 100){
+        if(umidade < 0 || umidade > 100){
             resultado.innerHTML = `Valor de umidade inválido`
             inpt_temperatura.value = "";
             inpt_umidade.value = "";

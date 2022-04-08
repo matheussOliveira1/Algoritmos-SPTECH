@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+<body>
+    Rua A: <select id="select_ruaA">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+    Rua B: <select id="select_ruaB">
+        <option value="0">Parado</option>
+        <option value="1">Andando</option>
+    </select>
+    <button onclick="simulador()">Simular</button>
+    <div id="fluxo"></div>
+</body>
+</html>
+
+<script>
+    function simulador(){
+        var ruaA = Number(select_ruaA.value);
+        var ruaB = Number(select_ruaB.value);
+        if(ruaA == "1" && ruaB == "1"){
+            fluxo.innerHTML = `Risco de colisão!!`
+        }else if(ruaA == "0" && ruaB == "0"){
+            fluxo.innerHTML = `Risco de engarrafamento`
+        }else{
+            fluxo.innerHTML = `Fluxo perfeito`
+        }
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+<body>
+    Frequentador A: <select id="select_frequentadorA">
+        <option value="0">Não irei neste fim de semana</option>
+        <option value="1">Irei neste fim de semana</option>
+    </select><br>
+    Frequentador B: <select id="select_frequentadorB">
+        <option value="0">Não irei neste fim de semana</option>
+        <option value="1">Irei neste fim de semana</option>
+    </select><br>
+    <button onclick="checador()">Checar aglomeração</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function checador(){
+        var freqA = Number(select_frequentadorA.value);
+        var freqB = Number(select_frequentadorB.value);
+        if(freqA == 0 && freqB == 0){
+            div_resultado.innerHTML = `Risco 0 de aglomeração, perfeito sorriso`
+        }else if(freqA == 1 && freqB == 1){
+            div_resultado.innerHTML = `Risco alto de aglomeração, 100% de ocupação`
+        }else{
+            div_resultado.innerHTML = `Risco baixo de aglomeração, 50% das pessoas estarão no parque`
+        }
+    }
+</script>

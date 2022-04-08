@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    Informe sua nota: <input id="inpt_nota"><br>
+    Informe sua frequência: <input id="inpt_frequencia"><br>
+    <button onclick="analisador()">Analisar aluno</button>
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+function analisador(){
+    var nota = Number(inpt_nota.value);
+    var frequencia = Number(inpt_frequencia.value);
+
+    if(nota < 0 || nota > 10){
+        alert("Onde já se viu nota menor que 0 ou maior que 10?!");
+        inpt_nota.value = "";
+        inpt_frequencia.value = "";
+    }else if(frequencia < 0 || frequencia > 100){
+        alert("Onde já se viu frequência menor que 0 ou maior que 100?");
+        inpt_nota.value = "";
+        inpt_frequencia.value = "";
+    }else{
+        if(nota >= 0 && nota <= 6){
+            if(frequencia > 75){
+                resultado.innerHTML = `Aluno ficou abaixo da média! Aluno aprovado por frequência`
+            }else{
+                resultado.innerHTML = `Aluno ficou abaixo da média! Aluno reprovado por frequência`
+            }
+        }else if(nota >= 6 && nota <= 8 ){
+            if(frequencia > 75){
+                resultado.innerHTML = `Aluno ficou na média! Aluno aprovado por frequência`
+            }else{
+                resultado.innerHTML = `Aluno ficou na média! Aluno reprovado por frequência`
+            }
+        }else{
+            if(frequencia > 75){
+                resultado.innerHTML = `Aluno ficou acima de média! Aluno aprovado por frequência`
+            }else{
+                resultado.innerHTML = `Aluno ficou acima de média! Aluno reprovado por frequência`
+            }
+        }
+    }
+}
+</script>
