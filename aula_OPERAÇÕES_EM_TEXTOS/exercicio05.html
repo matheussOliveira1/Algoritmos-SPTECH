@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome: <input onkeyup="validar()" id="input_nome"><br>
+    Nome válido?: <span id="span_nome">Não</span>
+</body>
+</html>
+
+<script>
+    function validar(){
+        var nome = input_nome.value;
+        if(nome.trimStart() > -1){
+            span_nome.innerHTML = 'Não'
+        }else{
+            if(nome.endsWith("fogo")){
+                span_nome.innerHTML = "Com fogo não se brinca!"
+            }else{
+                span_nome.innerHTML = 'Sim'
+            }
+        }
+    }
+</script>

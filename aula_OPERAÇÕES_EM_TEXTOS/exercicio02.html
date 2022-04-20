@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome: <input onkeyup="validar()" id="input_nome"><br>
+    Nome valido? <span id="span_nome">Não</span><br>
+    Tamanho do texto: <span id="span_tamanho"></span>
+</body>
+</html>
+
+<script>
+    function validar(){
+        var frase = input_nome.value;
+        span_tamanho.innerHTML = frase.length;
+        if(frase.length >= 10){
+            span_nome.innerHTML = "Sim"
+        }else{
+            span_nome.innerHTML = "Não"
+        }
+    }
+</script>

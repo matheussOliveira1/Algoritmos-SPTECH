@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira uma frase: <input onkeyup="alteracao_frase()" id="input_frase"><br>
+    <span id="span_frase"></span><br>
+</body>
+</html>
+
+
+<script>
+    function alteracao_frase(){
+        var frase = input_frase.value; 
+        span_frase.innerHTML += `${frase[frase.length - 1]} <br>`;
+
+    }
+</script>

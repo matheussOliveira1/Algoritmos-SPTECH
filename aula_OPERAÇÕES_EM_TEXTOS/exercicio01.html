@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Email: <input onkeyup="validar()" id="input_email"><br>
+    Email valido?: <span id="span_email">Não</span>
+</body>
+</html>
+
+<script>
+    function validar(){
+        var frase = input_email.value;
+        
+        if(frase.indexOf("@") > -1){
+            span_email.innerHTML = 'Sim'
+        }else{
+            span_email.innerHTML = 'Não'
+        }
+    }
+</script>
