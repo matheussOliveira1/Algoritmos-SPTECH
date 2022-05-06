@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ8</title>
+</head>
+
+<body>
+    Insira um número(entre 0 e 200) <input id="inpt_valor"><br>
+    <button onclick="butt_multiplic()">Viva o 7</button>
+    <div id="div_resultado"></div>
+    <div id="div_erro"></div>
+</body>
+
+</html>
+
+<script>
+    function butt_multiplic() {
+        var numero_contador = 0;
+        var valor = Number(inpt_valor.value);
+        if (valor < 0 || valor > 200) {
+            div_erro.innerHTML = `Insira um numero entre <b>0</b> e <b>200</b>!`
+            div_resultado.innerHTML = ``;
+        } else {
+            while (numero_contador < valor) {
+                if (numero_contador % 7 == 0) {
+                    div_erro.innerHTML = ``;
+                    div_resultado.innerHTML += `${numero_contador}<br>`;
+                    numero_contador++;
+                } else {
+                    div_erro.innerHTML = ``;
+                    div_resultado.innerHTML += ``;
+                    numero_contador++;
+                }
+            }
+        }
+    }
+
+</script>

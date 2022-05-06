@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO</title>
+</head>
+<body>
+    URL imagem: <input id="inpt_url_img"><br>
+    Quantas vezes exibir: <input type="<text>" id="inpt_qtd_exibir"><br>
+    Quantas imagens por linha: <input type="text" id="inpt_qtd_linha"><br>
+    <button onclick="butt_exibir_img()">Ver imagens</button>
+    <div id="div_exibir_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function butt_exibir_img(){
+        var contador = 0;
+        var url = inpt_url_img.value;
+        var qtdExibir = Number(inpt_qtd_exibir.value);
+        var qtdLinha = Number(inpt_qtd_linha.value);
+        while(contador <= qtdExibir){
+            if(contador > qtdLinha){
+                div_exibir_resultado.innerHTML += `<br><img src="${url}" style="width: 20%">`;
+                contador += 1;
+            }else{
+                div_exibir_resultado.innerHTML += "<br>";
+                div_exibir_resultado.innerHTML += `<img src="${url}" style="width: 20%">`;
+                contador += 1;
+            }
+        }
+        
+    
+    }
+</script>
