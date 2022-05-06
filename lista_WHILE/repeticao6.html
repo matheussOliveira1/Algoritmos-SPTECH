@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Atv6</title>
-</head>
-<body>
-    Nome da pessoa que você mais ama: <input id="inpt_nome"><br>
-    O quanto voce a(o) ama? <input id="inpt_quanto"><br>
+  </head>
+  <body>
+    Nome da pessoa que você mais ama: <input id="inpt_nome" /><br />
+    O quanto voce a(o) ama? <input id="inpt_quanto" /><br />
     <button onclick="expressar()">Expressar Amor</button>
     <div id="div_expressando"></div>
-
-</body>
+  </body>
 </html>
 
 <script>
-    function expressar(){
-        var quanto = Number(inpt_quanto.value);
-        var contador = 1;
-        var nome = inpt_nome.value;
-        while(contador <= quanto){
-            div_expressando.innerHTML += `${contador}. ${nome}<br>`
-            contador += 1;
-        }
+  function expressar() {
+    var quanto = Number(inpt_quanto.value);
+    var contador = 1;
+    var nome = inpt_nome.value;
+    while (contador <= quanto) {
+      div_expressando.innerHTML += `${contador}. ${nome}<br>`;
+      contador += 1;
     }
+  }
 </script>

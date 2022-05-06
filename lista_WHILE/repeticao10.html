@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ10</title>
+  </head>
+  <body>
+    Informe a quantidade de troféus que seu time tem na FIFA:
+    <input id="inpt_qtd_trofeus" /><br />
+    <button onclick="butt_exibir()">Ver troféus de mundiais FIFA</button>
+    <div id="div_imagem"></div>
+    <div id="div_img_chorando"></div>
+  </body>
+</html>
+
+<script>
+  function butt_exibir() {
+    var contador = 1;
+    var qtd_trofeus = Number(inpt_qtd_trofeus.value);
+    if (qtd_trofeus <= 0) {
+      div_img_chorando.innerHTML = `<img src="neychorando.jpeg" style="width: 20%";>`;
+      div_imagem.innerHTML = ``;
+    } else {
+      while (contador <= qtd_trofeus) {
+        div_img_chorando.innerHTML = ``;
+        div_imagem.innerHTML += `<img src="trofeu.jpg" style="width: 20%;">`;
+        contador += 1;
+      }
+    }
+  }
+</script>

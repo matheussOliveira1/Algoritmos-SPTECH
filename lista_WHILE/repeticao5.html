@@ -7,6 +7,34 @@
     <title>Atv5</title>
 </head>
 <body>
-    
+    <button onclick="butt_exibir()">Números cabalísticos</button>
+    <div id="div_numeros"></div>
 </body>
 </html>
+
+<script>
+    function butt_exibir(){
+        var contador = 1;
+        while(contador <= 15){
+            if(contador == 3){
+                div_numeros.innerHTML += ``;
+                contador += 1;
+            }else if(contador == 4){
+                div_numeros.innerHTML += ``;
+                contador += 1;
+            }else if(contador == 7){
+                div_numeros.innerHTML += ``;
+                contador += 1;
+            }else if(contador == 10){
+                div_numeros.innerHTML += ``;
+                contador += 1;
+            }else if(contador == 12){
+                div_numeros.innerHTML += ``;
+                contador += 1;
+            }else{
+                div_numeros.innerHTML += `${contador}<br>`
+                contador += 1;
+            }
+        }
+    }
+</script>

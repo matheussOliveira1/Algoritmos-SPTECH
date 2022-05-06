@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv9</title>
+  </head>
+  <body>
+    Informe um numero: <input id="inpt_numero" /><br />
+    Informe uma frase: <input id="inpt_frase" /><br />
+    <button onclick="butt_apresentar()">Papaigo</button>
+  </body>
+</html>
+
+<script>
+  function butt_apresentar() {
+    var contador = 1;
+    var numero = Number(inpt_numero.value);
+    var frase = inpt_frase.value;
+    while (contador <= numero) {
+      alert(`${frase}`);
+      contador += 1;
+    }
+  }
+</script>
