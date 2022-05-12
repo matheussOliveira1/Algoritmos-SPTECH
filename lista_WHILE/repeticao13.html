@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv13</title>
+  </head>
+  <body>
+    Musculação quantos dias no mês? <input id="inpt_dias_mes" /><br />
+    <button onclick="butt_rotina()">Exibir rotina mensal</button><br />
+    <div id="exibir_rotina"></div>
+  </body>
+</html>
+
+<script>
+  function butt_rotina() {
+    var rotina = inpt_dias_mes.value;
+    for (var contador = 1; contador <= 30; contador++) {
+      if (contador % rotina == 1) {
+        exibir_rotina.innerHTML += `Dia ${contador} - Musculação<br>`;
+      } else {
+        exibir_rotina.innerHTML += `Dia ${contador} - Comer, dormir, etc<br>`;
+      }
+    }
+  }
+</script>

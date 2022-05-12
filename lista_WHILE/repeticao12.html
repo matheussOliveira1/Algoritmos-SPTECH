@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv12</title>
+  </head>
+
+  <body>
+    Qual tabuada deseja ver?<select id="select_number">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option></select
+    ><br />
+    Até qual valor deve ser construida?<input
+      type="text"
+      id="inpt_maximo"
+    /><br />
+    <button onclick="butt_tabuada()">Exibir tabuada</button>
+    <div id="div_resultado"></div>
+  </body>
+</html>
+
+<script>
+  function butt_tabuada() {
+    var select = select_number.value;
+    var tabuadaMaxima = Number(inpt_maximo.value);
+
+    for (
+      var multiplicador = 1;
+      multiplicador <= tabuadaMaxima;
+      multiplicador++
+    ) {
+      var cor = "red";
+      if (multiplicador % 2 == 0) {
+        cor = "blue";
+      }
+
+      var resultado = select * multiplicador;
+      div_resultado.innerHTML += `<span style="color:${cor}">${select} x ${multiplicador} = ${resultado}</span><br>`;
+    }
+  }
+</script>

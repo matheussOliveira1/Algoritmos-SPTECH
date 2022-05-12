@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv19</title>
+  </head>
+  <body>
+    Quantos ônibus terá que pegar?
+    <input type="text" id="inpt_qtd_onibus" /><br />
+    Quantos trens terá que pegar?
+    <input type="text" id="inpt_qtd_trem" /><br />
+    Quantos metrôs terá que pegar?
+    <input type="text" id="inpt_qtd_metro" /><br />
+    <button onclick="seguir_trajeto()">#Partiu trajeto</button><br />
+    <div id="exibir_frase"></div>
+  </body>
+</html>
+
+<script>
+  function seguir_trajeto() {
+    var qtd_onibus = Number(inpt_qtd_onibus.value);
+    var qtd_trem = Number(inpt_qtd_trem.value);
+    var qtd_metro = Number(inpt_qtd_metro.value);
+
+    for (var contador = 1; contador <= qtd_onibus; contador++) {
+      if (contador == 2) {
+        exibir_frase.innerHTML += `<span style="color: red;">Pegando o ${contador}° busão. Começando a cansar!<br><br></span>`;
+      } else if (contador >= 3) {
+        exibir_frase.innerHTML += `<span style="color: red;">Pegando o ${contador}° busão. Já cansado!<br><br></span>`;
+      } else {
+        exibir_frase.innerHTML += `<span style="color: red;">Pegando o ${contador}° busão<br><br></span>`;
+      }
+    }
+
+    for (var contador = 1; contador <= qtd_trem; contador++) {
+      if (contador == 2) {
+        exibir_frase.innerHTML += `<span style="color: green;">Pegando o ${contador}° trem. Começando a cansar!<br><br></span>`;
+      } else if (contador >= 3) {
+        exibir_frase.innerHTML += `<span style="color: green;">Pegando o ${contador}° trem. Já cansado!<br><br></span>`;
+      } else {
+        exibir_frase.innerHTML += `<span style="color: green;">Pegando o ${contador}° trem<br><br></span>`;
+      }
+    }
+
+    for (var contador = 1; contador <= qtd_metro; contador++) {
+      if (contador == 2) {
+        exibir_frase.innerHTML += `<span style="color: blue;">Pegando o ${contador}° metrô. Começando a cansar!<br><br></span>`;
+      } else if (contador >= 3) {
+        exibir_frase.innerHTML += `<span style="color: blue;">Pegando o ${contador}° metrô. Já cansado!<br><br></span>`;
+      } else {
+        exibir_frase.innerHTML += `<span style="color: blue;">Pegando o ${contador}° metrô<br><br></span>`;
+      }
+    }
+  }
+</script>

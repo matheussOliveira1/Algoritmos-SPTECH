@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atv15</title>
+</head>
+<body>
+    Informe a quantidade de elefantes <input type="text" id="inpt_qtd_elefantes"><br>
+    <button onclick="botao_atazanar()">Atazar a médium</button><br>
+    <div id="frase"></div>
+</body>
+</html>
+
+<script>
+    function botao_atazanar(){
+        var qtd_elefantes = Number(inpt_qtd_elefantes.value);
+        for(var contador = 1; contador <= qtd_elefantes; contador++){
+            if(contador % qtd_elefantes == 1){
+                frase.innerHTML += `${contador} elefante incomoda muita gente!<br>`;
+            }else if(contador % qtd_elefantes == 0){
+                frase.innerHTML += `${contador} elefantes, incomodam muito mais!<br>`;
+            }
+        }
+    }
+</script>

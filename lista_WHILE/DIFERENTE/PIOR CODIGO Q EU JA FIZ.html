@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atv12</title>
+  </head>
+  <body>
+    Qual tabuada deseja ver?<select id="select_tabuada">
+      <option value="number2">Tabuada do 2</option>
+      <option value="number3">Tabuada do 3</option>
+      <option value="number4">Tabuada do 4</option>
+      <option value="number5">Tabuada do 5</option>
+      <option value="number6">Tabuada do 6</option>
+      <option value="number7">Tabuada do 7</option>
+      <option value="number8">Tabuada do 8</option>
+      <option value="number9">Tabuada do 9</option>
+    </select>
+    <br />
+    Até qual numero voce deseja ver? <input id="inpt_numero_tabuada" />
+    <br />
+    <button onclick="butt_tabuada()">Ver tabuada</button>
+    <div id="div_tabuada"></div>
+  </body>
+</html>
+
+<script>
+  function butt_tabuada() {
+    var contador = 0;
+    var numero = inpt_numero_tabuada.value;
+    var numeroSelecionado = 0;
+    var tabuada = select_tabuada.value;
+
+    if (tabuada == "number2") {
+      numeroSelecionado = 2;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number3") {
+      numeroSelecionado = 3;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number4") {
+      numeroSelecionado = 4;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number5") {
+      numeroSelecionado = 5;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number6") {
+      numeroSelecionado = 6;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number7") {
+      numeroSelecionado = 7;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else if (tabuada == "number8") {
+      numeroSelecionado = 8;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    } else {
+      numeroSelecionado = 9;
+      while (contador <= numero) {
+        div_tabuada.innerHTML += `${numeroSelecionado} x ${contador} = ${
+          numeroSelecionado * contador
+        }<br>`;
+        contador++;
+      }
+    }
+  }
+</script>
