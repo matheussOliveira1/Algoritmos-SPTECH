@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ativ2</title>
-</head>
-<body>
-    Lugares onde já viajou: <input type="text" id="inpt_viagens"><br>
-    Relembrar viagem: <input type="text" id="inpt_relembrar"><br>
+  </head>
+  <body>
+    Lugares onde já viajou: <input type="text" id="inpt_viagens" /><br />
+    Relembrar viagem: <input type="text" id="inpt_relembrar" /><br />
     <button onclick="cadastrar()">Cadastrar local</button>
-    <button onclick="relembrar()">Relembrar</button><br>
+    <button onclick="relembrar()">Relembrar</button><br />
     <div id="exibir"></div>
-
-</body>
+  </body>
 </html>
 
 <script>
-    var lista_viagens = [];
-    
-    function cadastrar(){
-        var viagensFeitas = inpt_viagens.value;
-        lista_viagens.push(viagensFeitas);
-    }
+  var lista_viagens = [];
 
-    function relembrar(){
-        var relembrarViagem = inpt_relembrar.value;
-        for(var i = 1;i < lista_viagens.length; i++){
-            if(relembrarViagem > lista_viagens.length){
-                exibir.innerHTML = `Voce não fez uma ${relembrarViagem}ª viagem`
-            }else{
-                exibir.innerHTML = `${lista_viagens[relembrarViagem - 1]}`
-            }
-        }
+  function cadastrar() {
+    var viagensFeitas = inpt_viagens.value;
+    lista_viagens.push(viagensFeitas);
+  }
+
+  function relembrar() {
+    var relembrarViagem = Number(inpt_relembrar.value);
+    if (relembrarViagem > lista_viagens.length) {
+      exibir.innerHTML = `Voce não fez uma ${relembrarViagem}ª viagem`;
+    } else {
+      exibir.innerHTML = `${lista_viagens[relembrarViagem - 1]}`;
     }
+  }
 </script>

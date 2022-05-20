@@ -17,30 +17,17 @@
 <script>
   var lista_alunos = [];
 
-  function cadastrar() {
+  function cadastrar(){
+    var existe = 0;
     var nome = inpt_nome.value;
-
-    if (lista_alunos.indexOf(nome) > -1) {
-      exibir.innerHTML = "Aluno já cadastrado";
-    } else {
-      lista_alunos.push(nome);
-      exibir.innerHTML = ``;
-      for (var i = 0; i < lista_alunos.length; i++) {
-        exibir.innerHTML += `${lista_alunos[i]}<br>`;
-      }
-    }
-  }
-
-  function verificar() {
-    var nomeAluno = inpt_nome.value;
-    for (var posicao = 0; posicao < lista_alunos.length; posicao++) {
-      if (lista_alunos.indexOf(nomeAluno) == -1) {
-        exibir.innerHTML = "Aluno não cadastrado!";
-      } else {
-        for (var posicao = 0; posicao < lista_alunos.length; posicao++) {
-            exibir.innerHTML = `O aluno: ${nomeAluno} já existe na lista`
-            alert(`O ${nomeAluno} aparece ${lista_alunos[i.length]} vezes na lista`);
-        }
+    for(var i = 0; i < lista_alunos.length; i++){
+      if(lista_alunos[i] == nome){
+        lista_alunos.push(nome);
+        alert("Aluno apenas cadastrado e aumentou o valor de existe");
+        existe++;
+      }else{
+        lista_alunos.push(nome);
+        alert("Aluno apenas cadastrado");
       }
     }
   }

@@ -8,7 +8,8 @@
   </head>
   <body>
     Nome do aluno: <input type="text" id="inpt_nome" /><br />
-    <button onclick="cadastrar()">Cadastrar</button> <button onclick="verificar()">Verificar aluno</button>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="verificar()">Verificar aluno</button>
     <div id="exibir"></div>
   </body>
 </html>
@@ -17,40 +18,33 @@
   var lista_alunos = [];
 
   function cadastrar() {
+    var existe = 0;
     var nomeAluno = inpt_nome.value;
-
-    if(lista_alunos.indexOf(nomeAluno) > -1){
-      exibir.innerHTML = "Aluno já cadastrado!";
-    }else{
-      exibir.innerHTML = ``;
-      lista_alunos.push(nomeAluno);
-       for (var i = 0; i < lista_alunos.length; i++) {
-        exibir.innerHTML += `${lista_alunos[i]}<br>`;
+    for (var i = 0; i < lista_alunos.length; i++) {
+      if (lista_alunos[i] == nomeAluno) {
+        existe = 1;
       }
     }
-    // outra forma:
-
-    // if (lista_alunos.indexOf(nomeAluno) == -1) {
-    //   lista_alunos.push(nomeAluno);
-    //   exibir.innerHTML = ``;
-    //   for (var i = 0; i < lista_alunos.length; i++) {
-    //     exibir.innerHTML += `${lista_alunos[i]}<br>`;
-    //   }
-    // } else {
-    //   exibir.innerHTML = "Aluno já cadastrado!";
-    // }
-
-    
-  }
-
-  function verificar(){
-    var nomeAluno = inpt_nome.value;
-    for(var posicao = 0; posicao < lista_alunos.length; posicao++){
-    if(lista_alunos.indexOf(nomeAluno) == -1){
-      exibir.innerHTML = "Aluno não cadastrado!";
-    }else{
-        exibir.innerHTML = `O aluno: ${nomeAluno} já existe na lista`;
+    if (existe == 0) {
+      lista_alunos.push(nomeAluno);
+      exibir.innerHTML += `${lista_alunos[i]}<br>`;
+    } else {
+      alert(`O ${nomeAluno} já existe!`);
     }
   }
-}
+
+  function verificar() {
+    var existe = 0;
+    var nomeAluno = inpt_nome.value;
+    for (var i = 0; i < lista_alunos.length; i++) {
+      if (lista_alunos[i] == nomeAluno) {
+        existe = 1;
+      }
+    }
+    if (existe == 0) {
+      exibir.innerHTML = "Aluno não cadastrado!";
+    } else {
+      alert(`O ${nomeAluno} já existe!`);
+    }
+  }
 </script>
