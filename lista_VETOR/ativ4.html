@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ4</title>
+</head>
+<body>
+    Filmes fav: <input type="text" id="inpt_filmes"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+    var lista_filmes = [];
+    var i = 0;
+
+    function cadastrar(){
+        var filmesFav = inpt_filmes.value;
+        lista_filmes.push(filmesFav);
+
+        if(lista_filmes.length % 2 == 1){
+            exibir.innerHTML += `<span style="color: blue">${lista_filmes[i]}</span><br>`;
+        }else{
+            exibir.innerHTML += `<span style="color: red">${lista_filmes[i]}</span><br>`;
+        }
+        i++;
+    }
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ3</title>
+</head>
+<body>
+    Informe seus filmes preferidos: <input type="text" id="inpt_filmes"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="exibir"></div>
+</body>
+</html>
+
+<script>
+    var lista_filmes = [];
+    var i = 0;
+
+    function cadastrar(){
+        var filmesFav = inpt_filmes.value;
+        lista_filmes.push(filmesFav);
+        exibir.innerHTML += `${lista_filmes[i]}<br>`
+        i++;
+
+
+        // COM FOR
+        // exibir.innerHTML = ``;
+        // for(var i = 0; i < lista_filmes.length; i++){
+        //     exibir.innerHTML += `${lista_filmes[i]}<br>`;
+        // } 
+
+    }   
+</script>

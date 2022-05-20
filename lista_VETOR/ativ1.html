@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ1</title>
+</head>
+
+<body>
+    Filmes filmes favoritos: <input type="text" id="inpt_filmes_fav"><br>
+    <button onclick="cadastrar()">Cadastrar</button><br>
+    <div id="exibir"></div>
+</body>
+
+</html>
+
+<script>
+    var lista_filmes = [];
+    function cadastrar() {
+        var filmesFav = inpt_filmes_fav.value;
+        lista_filmes.push(filmesFav);
+
+        for (var posicao = 0; posicao < lista_filmes.length; posicao++) {
+            if(lista_filmes.length < 3){
+                exibir.innerHTML = `Seu filme favorito: ${lista_filmes[0]} <br> 
+                Seu 3° filme favorito: Ainda não existe <br> 
+                Total de filmes cadastrados: ${lista_filmes.length}`;
+            }else{
+                exibir.innerHTML = `Seu filme favorito: ${lista_filmes[0]} <br> 
+                Seu 3° filme favorito: ${lista_filmes[2]} <br> 
+                Total de filmes cadastrados: ${lista_filmes.length}`;
+            }
+        }
+    }
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ6</title>
+  </head>
+  <body>
+    Nome do aluno: <input type="text" id="inpt_nome" /><br />
+    <button onclick="cadastrar()">Cadastrar</button> <button onclick="verificar()">Verificar aluno</button>
+    <div id="exibir"></div>
+  </body>
+</html>
+
+<script>
+  var lista_alunos = [];
+
+  function cadastrar() {
+    var nomeAluno = inpt_nome.value;
+
+    if(lista_alunos.indexOf(nomeAluno) > -1){
+      exibir.innerHTML = "Aluno já cadastrado!";
+    }else{
+      exibir.innerHTML = ``;
+      lista_alunos.push(nomeAluno);
+       for (var i = 0; i < lista_alunos.length; i++) {
+        exibir.innerHTML += `${lista_alunos[i]}<br>`;
+      }
+    }
+    // outra forma:
+
+    // if (lista_alunos.indexOf(nomeAluno) == -1) {
+    //   lista_alunos.push(nomeAluno);
+    //   exibir.innerHTML = ``;
+    //   for (var i = 0; i < lista_alunos.length; i++) {
+    //     exibir.innerHTML += `${lista_alunos[i]}<br>`;
+    //   }
+    // } else {
+    //   exibir.innerHTML = "Aluno já cadastrado!";
+    // }
+
+    
+  }
+
+  function verificar(){
+    var nomeAluno = inpt_nome.value;
+    for(var posicao = 0; posicao < lista_alunos.length; posicao++){
+    if(lista_alunos.indexOf(nomeAluno) == -1){
+      exibir.innerHTML = "Aluno não cadastrado!";
+    }else{
+        exibir.innerHTML = `O aluno: ${nomeAluno} já existe na lista`;
+    }
+  }
+}
+</script>
