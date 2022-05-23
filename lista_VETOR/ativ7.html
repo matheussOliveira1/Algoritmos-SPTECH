@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ7</title>
+  </head>
+  <body>
+    Nome do aluno: <input type="text" id="inpt_nome" /><br />
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="verificar()">Verificar aluno</button>
+    <div id="exibir"></div>
+  </body>
+</html>
+
+<script>
+  var lista_alunos = [];
+ 
+  function cadastrar() {
+    var nome = inpt_nome.value;
+    lista_alunos.push(nome);
+    exibir.innerHTML = ``;
+    for (var i = 0; i < lista_alunos.length; i++) {
+        exibir.innerHTML += `${lista_alunos[i]}<br>`;
+    }
+  }
+
+  function verificar() {
+    var nome = inpt_nome.value;
+    var contagemAluno = 0;
+    for (var i = 0; i < lista_alunos.length; i++) {
+      if (lista_alunos[i] == nome) {
+        contagemAluno++;
+      }
+    }
+
+    if (contagemAluno == 0) {
+      alert("Aluno não cadastrado!");
+    } else {
+      alert(`${nome} já está cadastrado no sistema e aparece ${contagemAluno} vezes`);
+    }
+  }
+</script>

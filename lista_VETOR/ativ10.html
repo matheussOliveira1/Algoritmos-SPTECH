@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ10</title>
+</head>
+<body>
+    Digite qualquer numero: <input type="text" id="inpt_nmr"><br>
+    <button onclick="analisar()">Analisar histórico</button>
+    <div id="div_exibir"></div>
+    <div id="extremidades"></div>
+</body>
+</html>
+
+<script>
+var lista_nmr = [];
+
+    function analisar(){
+        var numero = Number(inpt_nmr.value);
+        var ordem = 0;
+        var min = numero;
+        var max = numero;
+        lista_nmr.push(numero);
+
+
+       div_exibir.innerHTML = ``; 
+        for(var i = 0; i < lista_nmr.length; i++){
+            ordem++;
+            if(lista_nmr[i] > max){
+                max = lista_nmr[i];
+            }
+            if(lista_nmr[i] < min){
+                min = lista_nmr[i];
+            }
+            div_exibir.innerHTML += `${ordem}° Número: ${lista_nmr[i]}<br><br>`;
+            extremidades.innerHTML = `Maior: ${max} <br><br> Menor: ${min}`
+        }
+    }
+
+</script>

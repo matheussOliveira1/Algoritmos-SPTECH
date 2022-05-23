@@ -8,11 +8,35 @@
 </head>
 <body>
     Cadastre sua nota: <input type="text" id="inpt_nota"><br>
+    Primeiro Intervalo: <input type="text" id="interv1"><br>
+    Segundo Intervalo: <input type="text" id="interv2"><br>
     <button onclick="cadastrar()">Cadastrar nota</button>
+    <button onclick="rever()">Rever notas</button>
     <div id="exibir_nota"></div>
 </body>
 </html>
 
 <script>
+    var lista_notas = [];
 
+    function cadastrar(){
+        var nota = Number(inpt_nota.value);
+        lista_notas.push(nota);
+    }
+
+    function rever(){
+        var nota = Number(inpt_nota.value);
+        var primeiroInterv = Number(interv1.value);
+        var segundoInterv = Number(interv2.value);
+        var qtdInterv = 0;
+        var soma = 0;
+        for(var i = 0; i < lista_notas.length; i++){
+            if(lista_notas[i] >= primeiroInterv && lista_notas[i] <= segundoInterv){
+                soma += lista_notas[i];
+                qtdInterv++;
+            }
+        }
+        var resultado = soma / qtdInterv;
+        exibir_nota.innerHTML = `Foram cadastras ${qtdInterv} notas que estão no intervalo de  ${primeiroInterv} até ${segundoInterv} e a média dessas notas é ${resultado}`
+    }
 </script>

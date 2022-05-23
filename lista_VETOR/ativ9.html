@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ9</title>
+  </head>
+  <body>
+    Gravar linhas <input type="text" id="inpt_linhas" />
+    <button onclick="gravarLinha()">Gravar busão</button><br />
+    Pesquisar <input type="text" id="inpt_pesquisa" />
+    <button onclick="pesquisarLinha()">Pesquisar</button>
+    <div id="exibir_linhas"></div>
+  </body>
+</html>
+
+<script>
+  var lista_linhas = [];
+
+  function gravarLinha() {
+    var linhaBusao = inpt_linhas.value;
+    lista_linhas.push(linhaBusao);
+    exibir_linhas.innerHTML = ``;
+
+    for (var i = 0; i < lista_linhas.length; i++) {
+      exibir_linhas.innerHTML += `${lista_linhas[i]}<br>`;
+    }
+  }
+
+  function pesquisarLinha() {
+    var linhaBusao = inpt_pesquisa.value;
+    var ordem = 0;
+    var qtdVezes = 0;
+    var listaOrdem = [];
+
+    for(var i = 0; i < lista_linhas.length; i++){
+        if(lista_linhas[i] == linhaBusao){
+            qtdVezes++;
+            listaOrdem.push(i + 1);
+        }
+    }
+
+    if(qtdVezes > 0){
+        exibir_linhas.innerHTML += `Você já pegou essa linha ${qtdVezes} vezes na ordem de ${listaOrdem}<br>`;
+    }else{
+        exibir_linhas.innerHTML += `<br>Você nunca pegou essa linha<br>`;
+    }
+ }
+</script>
