@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ12</title>
+  </head>
+  <body>
+    <h2>Cadastrar nota dos alunos</h2>
+    <br />
+    RA: <input type="text" id="inpt_ra" /><br />
+    Nota: <input type="text" id="inpt_nota" /><br />
+    <button onclick="guardar()">Guardar</button><br />
+    <h2>Analisar nota dos alunos</h2>
+    P ou I?: <input type="text" id="inpt_par_impar" /><br />
+    <button onclick="analisar()">Analisar</button>
+    <div id="exibir"></div>
+  </body>
+</html>
+
+<script>
+  var ra_alunos = [];
+  var notas_par = [];
+  var notas_impar = [];
+
+  var somaNotasPar = 0;
+  var qtdPar = 0;
+  var mediaPar = 0;
+  var lista_mediaPar = [];
+
+  var somaNotasImpar = 0;
+  var qtdImpar = 0;
+  var mediaImpar = 0;
+  var lista_mediaImpar = [];
+
+  function guardar() {
+    var ra = Number(inpt_ra.value);
+    var nota = Number(inpt_nota.value);
+        if (ra_alunos % 2 == 0) {
+        notas_par.push(nota);
+        } else {
+        notas_impar.push(nota);
+        }
+  }
+
+  function analisar() {
+    var parImpar = inpt_par_impar.value;
+
+    if(parImpar.toUpperCase() ==  "P" || parImpar.toUpperCase() == "I"){
+        if(parImpar == "P"){
+            for(var i = 0; i < notas_par.length; i++){
+                somaNotasPar += notas_par[i];
+                qtdPar++;
+            }
+            mediaPar = somaNotasPar / qtdPar;
+            lista_mediaPar.push(mediaPar);
+            for(var medP = 0; medP < lista_mediaPar.length; medP++){
+
+            }
+        }else{
+            for(var i = 0; i < notas_impar.length; i++){
+                somaNotasImpar += notas_impar[i];
+                qtdImpar++;
+            }
+            mediaImpar = somaNotasImpar / qtdImpar;
+            lista_mediaImpar.push(mediaImpar);
+        }
+    }else{
+        alert(`Valor invalído, insira P ou I`);
+    }
+  }
+</script>

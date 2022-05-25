@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ativ11</title>
+  </head>
+  <body>
+    <h2>Preencha para depositar seu dinheiro</h2>
+    <br />
+    Dia: <input type="text" id="inpt_dia" /><br />
+    Valor: <input type="text" id="inpt_valor" /><br />
+    <button onclick="guardar()">Guardar</button>
+    <br />
+    <h2>Rever seus depósitos</h2>
+    <br />
+    Primeiro intervalo: <input type="text" id="inpt_primeiro_intervalo" /><br />
+    Segundo intervalo: <input type="text" id="inpt_segundo_intervalo" /><br />
+    <button onclick="rever()">Rever depósitos</button>
+    <div id="exibir"></div>
+    <div id="msg_final"></div>
+  </body>
+</html>
+
+<script>
+  var lista_dinheiro = [];
+  var lista_dias = [];
+
+  function guardar() {
+    var dia = Number(inpt_dia.value);
+    var valor = Number(inpt_valor.value);
+
+    if (dia == "" || valor == "" || dia == 0 || valor == 0) {
+      exibir.innerHTML = "Insira um dia e valor válido";
+      exibir.style.color = "red";
+    } else {
+      exibir.innerHTML = "";
+      lista_dias.push(dia);
+      lista_dinheiro.push(valor);
+    }
+  }
+
+  function rever() {
+    var dia = Number(inpt_dia.value);
+    var valor = Number(inpt_valor.value);
+    var primeiroIntervalo = Number(inpt_primeiro_intervalo.value);
+    var segundoIntervalo = Number(inpt_segundo_intervalo.value);
+    var totalDias = 0;
+    var totalDinheiro = 0;
+    var media = 0;
+    var cor = "";
+
+    exibir.innerHTML = ``;
+    for(var i = 0; i < lista_dias.length; i++){
+        if(lista_dias[i] >= primeiroIntervalo && lista_dias[i] <= segundoIntervalo){
+            cor = "lightblue";
+            if(i % 2 == 1){
+            cor = "lightgreen";
+            }
+            exibir.innerHTML += `<span style="background-color: ${cor}; color: black"> Dia: ${lista_dias[i]} | Valor depositado: ${lista_dinheiro[i]} <span><br>`;
+            totalDias++;
+            totalDinheiro += lista_dinheiro[i];
+        }
+    }
+
+    media = totalDinheiro / totalDias;
+    msg_final.innerHTML = `Quantidade de dias selecionados: ${totalDias} | Valor total dos depositos: ${totalDinheiro} | Media: ${media}`;
+
+
+  }
+</script>
