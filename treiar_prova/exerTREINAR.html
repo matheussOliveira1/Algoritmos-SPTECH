@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TREINAR</title>
+</head>
+<body>
+    Nome: <input type="text" id="input_nome"><br>
+    População: <input type="text" id="input_populacao"><br>
+    Grau de liberdade economica <input type="text" id="input_grau_liberdade"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="analisar()">Analisar</button>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    var lista_nome_pais = [];
+    var lista_categoria_pais = [];
+    var lista_populacao_pais = [];
+    var lista_idh_pais = [];
+    var lista_desemprego_pais = [];
+
+    
+    function cadastrar(){
+        var nome = input_nome.value;
+        var populacao = Number(input_populacao.value);
+        var grau_liberdade = Number(input_grau_liberdade.value);
+        var grau_liberdade_incorreto = grau_liberdade < 0 || grau_liberdade > 100;
+        var populacao_incorreta = populacao < 1000
+
+
+        var pais_cadastrado = false;
+        for(var contador = 0; contador < lista_nome_pais.length; contador++){
+            if(lista_nome_pais[contador] == nome){
+                pais_cadastrado = true;
+            }
+        }
+
+        if(pais_cadastrado){
+            alert("País já cadastrado");
+        }else if(populacao_incorreta || grau_liberdade_incorreto){
+            alert("Valores inválidos");
+        }else{
+            var categoria = "Reprimido";
+            var idh = "0.60";
+            var desemprego_medio = 0.22;
+            if(grau_liberdade > 80){
+                categoria = "Livre";
+                idh = "0.85";
+                desemprego_medio = 0.05;
+            }else if(grau_liberdade > 70){
+                categoria = "Quase Livre";
+                idh = "0.77";
+                desemprego_medio = 0.07;
+            }else if(grau_liberdade > 60){
+                categoria = "Moderadamente Livre";
+                idh = "0.74";
+                desemprego_medio = 0.08;
+            }else if(grau_liberdade > 50){
+                categoria = "Quase Reprimido";
+                idh = "0.65";
+                desemprego_medio = 0.15;
+            }
+
+            lista_nome_pais.push(nome);
+            lista_categoria_pais.push(categoria);
+            lista_populacao_pais.push(populacao);
+            lista_idh_pais.push(idh);
+            lista_desemprego_pais.push(desemprego_medio);
+        }
+    }
+
+    function analisar(){
+        div_resultado.innerHTML = ``;
+        for(var contador = 0; contador < lista_nome_pais.length; contador++){
+            var nome = lista_nome_pais[contador];
+            var categoria = lista_categoria_pais[contador];
+            var populacao = lista_populacao_pais[contador];
+            var idh = lista_idh_pais[contador];
+            var desemprego_medio_percentual = lista_desemprego_pais[contador] * 100;
+            var desemprego_medio = lista_desemprego_pais[contador] * populacao;
+
+            div_resultado.innerHTML += `
+            País ${contador + 1}: ${nome}<br>
+            Categoria: ${categoria}<br>
+            Habitantes: ${populacao}<br>
+            IDH médio provável: ${idh}<br>
+            Desemprego médio provável: ${desemprego_medio_percentual}%, ou seja, talvez ${desemprego_medio} estejam sem emprego<br><br>
+            `;
+        }
+    }
+</script>

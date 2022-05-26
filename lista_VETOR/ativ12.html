@@ -16,32 +16,42 @@
     P ou I?: <input type="text" id="inpt_par_impar" /><br />
     <button onclick="analisar()">Analisar</button>
     <div id="exibir"></div>
+    <div id="msgFinal"></div>
   </body>
 </html>
 
 <script>
   var ra_alunos = [];
-  var notas_par = [];
-  var notas_impar = [];
-
+  var ra_alunosPAR = [];
+  var ra_alunosIMPAR = [];
+  
+  var lista_notas = [];
+  var lista_notasPar = [];
+  var lista_notasImpar = [];
+  
   var somaNotasPar = 0;
   var qtdPar = 0;
   var mediaPar = 0;
-  var lista_mediaPar = [];
-
+  
+  var qtdAcimaMediaPAR = 0;
+  var acimaMediaPAR = 0;
+  var novaMediaPar = 0;
+  
+  
   var somaNotasImpar = 0;
   var qtdImpar = 0;
   var mediaImpar = 0;
-  var lista_mediaImpar = [];
+
+  var qtdAcimaMediaIMPAR = 0;
+  var acimaMediaIMPAR = 0;
+  var novaMediaIMPAR = 0;
+  
 
   function guardar() {
-    var ra = Number(inpt_ra.value);
-    var nota = Number(inpt_nota.value);
-        if (ra_alunos % 2 == 0) {
-        notas_par.push(nota);
-        } else {
-        notas_impar.push(nota);
-        }
+      var ra = Number(inpt_ra.value);
+      var nota = Number(inpt_nota.value);
+      ra_alunos.push(ra);
+      lista_notas.push(nota); 
   }
 
   function analisar() {
@@ -49,22 +59,47 @@
 
     if(parImpar.toUpperCase() ==  "P" || parImpar.toUpperCase() == "I"){
         if(parImpar == "P"){
-            for(var i = 0; i < notas_par.length; i++){
-                somaNotasPar += notas_par[i];
+            for(var i = 0; i < ra_alunos.length; i++){
+              if(ra_alunos[i] % 2 == 0){
+                ra_alunosPAR.push(ra_alunos[i]);
+                lista_notasPar.push(lista_notas[i]);
+                somaNotasPar += lista_notasPar[i];
                 qtdPar++;
+              }  
             }
             mediaPar = somaNotasPar / qtdPar;
-            lista_mediaPar.push(mediaPar);
-            for(var medP = 0; medP < lista_mediaPar.length; medP++){
 
+            exibir.innerHTML = ``;
+            for(var atualizadorPar = 0; atualizadorPar < lista_notasPar.length; atualizadorPar++){
+              if(lista_notasPar[atualizadorPar] > mediaPar){
+                acimaMediaPAR += lista_notasPar[atualizadorPar];
+                qtdAcimaMediaPAR++;
+                exibir.innerHTML += `Aluno com RA = ${ra_alunosPAR[atualizadorPar]} e nota: ${lista_notasPar[atualizadorPar]} foi selecionado pois a média é ${mediaPar}<br><br>`;
+              }
             }
+            novaMediaPar = acimaMediaPAR / qtdAcimaMediaPAR;
+            msgFinal.innerHTML = `<br>Quantidade de notas acima da média: ${qtdAcimaMediaPAR} e a nova média é ${novaMediaPar}`;
         }else{
-            for(var i = 0; i < notas_impar.length; i++){
-                somaNotasImpar += notas_impar[i];
+            for(var i = 0; i < ra_alunos.length; i++){
+              if(ra_alunos[i] % 2 == 1){
+                ra_alunosIMPAR.push(ra_alunos[i]);
+                lista_notasImpar.push(lista_notas[i]);
+                somaNotasImpar += lista_notasImpar[i];
                 qtdImpar++;
+              }
             }
             mediaImpar = somaNotasImpar / qtdImpar;
-            lista_mediaImpar.push(mediaImpar);
+
+            exibir.innerHTML = ``;
+            for(var atualizadorImpar = 0; atualizadorImpar < lista_notasImpar.length; atualizadorImpar++){
+              if(lista_notasImpar[atualizadorImpar] > mediaImpar){
+                acimaMediaIMPAR += lista_notasImpar[atualizadorImpar];
+                qtdAcimaMediaIMPAR++;
+                exibir.innerHTML += `Aluno com RA = ${ra_alunosIMPAR[atualizadorImpar]} e nota: ${lista_notasImpar[atualizadorImpar]} foi selecionado pois a média é ${mediaImpar}<br><br>`;
+              }
+            }
+            novaMediaIMPAR = acimaMediaIMPAR / qtdAcimaMediaIMPAR;
+            msgFinal.innerHTML = `<br>Quantidade de notas acima da média: ${qtdAcimaMediaIMPAR} e a nova média é ${novaMediaIMPAR}`;
         }
     }else{
         alert(`Valor invalído, insira P ou I`);
