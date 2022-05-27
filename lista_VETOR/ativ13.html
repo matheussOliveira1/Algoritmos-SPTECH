@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ativ13</title>
+</head>
+<body>
+    Nome produto: <input type="text" id="input_nome_produto"><br>
+    Preço da compra <input type="text" id="input_preco"><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="exibirRelatorio()">Relatório do estoque</button>
+    <div id="totalProdutos"></div>
+    <div id="div_exibir"></div>
+    <div id="msg_Final"></div>
+</body>
+</html>
+
+<script>
+    var lista_compras = [];
+    var preco_compras = [];
+    var qtd_produtos = 0;
+    var preco_venda = 0;
+    var soma_precos = 0;
+    var media_precos = 0;
+
+
+    function cadastrar(){
+        var nome_produto = input_nome_produto.value;
+        var preco_produto = Number(input_preco.value);
+        lista_compras.push(nome_produto);
+        preco_compras.push(preco_produto);
+        qtd_produtos++;
+    }
+
+    function exibirRelatorio(){
+        var nome_produto = input_nome_produto.value;
+        var preco_produto = Number(input_preco.value);
+        var produto_caro = preco_produto;
+        var produto_barato = preco_produto;
+        
+        div_exibir.innerHTML = ``;
+        for(var i = 0; i < lista_compras.length; i++){
+            if(preco_compras[i] > produto_caro){
+                produto_caro = preco_compras[i];
+            }
+            if(preco_compras[i] < produto_barato){
+                produto_barato = preco_compras[i];
+            }
+            var porcentagemVenda = (preco_compras[i] * 0.25) / 1;
+            var preco_venda = preco_compras[i] + porcentagemVenda;
+            soma_precos += preco_compras[i];
+            totalProdutos.innerHTML = `Total de produtos: ${qtd_produtos}<br>`;
+            div_exibir.innerHTML += `Produto: ${i + 1}: ${lista_compras[i]}<br> Preço de compra: R$${preco_compras[i]}. Vender por R$${preco_venda}<br><br>`;
+        }
+        
+        media_precos = soma_precos / qtd_produtos;
+        msg_Final.innerHTML = `
+        Produto mais caro ${produto_barato}<br>
+        Produto mais barato ${produto_barato}<br>
+        Soma dos preços de compra dos produtos ${soma_precos}<br>
+        Média de preço de venda dos produtos ${media_precos}
+                                                `;
+    }
+</script>
